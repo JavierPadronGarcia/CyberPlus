@@ -1,0 +1,121 @@
+* {
+    list-style: none;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.main-container {
+    background: #333E54;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+}
+
+.first-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.first-line div:not(.logo) {
+    width: 30%;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo img {
+    height: 4rem;
+}
+
+.second-line {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.3rem;
+}
+
+.second-line div:first-child {
+    color: #FFF;
+    display: flex;
+    line-height: normal;
+    gap: 5px;
+}
+
+.second-line div:last-child {
+    color: #FFF;
+    display: flex;
+    line-height: normal;
+    gap: 5px;
+}
+
+.menu {
+    z-index: 1;
+    position: absolute;
+    width: 67%;
+}
+
+.menu-sections {
+    background-color: #E4E4E4;
+    border-bottom-right-radius: 10px;
+}
+
+.menu-sections div {
+    border-bottom: 0.25px solid rgba(0, 0, 0, 0.30);
+    border-right: 0.25px solid rgba(0, 0, 0, 0.30);
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.menu-sections div img {
+    margin: 5px 0 5px 10px;
+}
+
+.menu-sections div span {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-sections div:last-child,
+.menu-sections div:last-child span {
+    border-bottom-right-radius: 10px;
+}
+
+.dark-mode-icon {
+    width: fit-content;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    left: 1rem;
+    top: 0.5rem;
+}
+
+.dark-mode-icon img {
+    width: 90%;
+}
+
+.finder {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.fixed-user {
+    position: fixed;
+    top: 6.7rem;
+    right: 1rem;
+    transform: translateY(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.fixed-user.move-down-active {
+    transform: translateY(4rem);
+}

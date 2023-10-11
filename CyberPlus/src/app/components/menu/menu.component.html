@@ -1,0 +1,51 @@
+<header>
+    <div class="main-container">
+        <div class="first-line">
+            <div>
+                <img src="../../../assets/icons/menu-bar.svg" (click)="changeMenuVisibility()" *ngIf="!menuVisbility" />
+                <img src="../../../assets/icons/menu-close.svg" (click)="changeMenuVisibility()"
+                    *ngIf="menuVisbility" />
+            </div>
+            <div class="logo"><img src="../../../assets/images/logo.svg"></div>
+            <div><img src="../../../assets/icons/find-icon.svg" (click)="changeSearcherVisibility()"></div>
+        </div>
+        <div class="second-line">
+            <div>
+                <img src="../../../assets/icons/offer.svg">
+                <span>Ofertas</span>
+            </div>
+            <div>
+                <img src="../../../assets/icons/news-icon.svg">
+                <span>Novedades</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <app-search *ngIf="searcherVisibility" [@moveDown] class="finder" />
+    </div>
+    <div class="menu" *ngIf="menuVisbility" [@moveDown]>
+        <div class="menu-sections">
+            <div>
+                <img src="../../../assets/icons/cpu.svg" alt="componentes">
+                <span>Componentes</span>
+            </div>
+            <div>
+                <img src="../../../assets/icons/computer.svg" alt="ordenadores">
+                <span>Ordenadores</span>
+            </div>
+            <div>
+                <img src="../../../assets/icons/peripherals.svg" alt="periféricos">
+                <span>Periféricos</span>
+            </div>
+            <div>
+                <img src="../../../assets/icons/monitor.svg" alt="monitores">
+                <span>Monitores</span>
+            </div>
+        </div>
+        <div class="dark-mode-icon">
+            <img src="../../../assets/icons/dark-mode-icon.svg" alt="modo oscuro">
+        </div>
+    </div>
+
+    <app-user class="fixed-user" [ngClass]="{'move-down-active': searcherVisibility}" />
+</header>

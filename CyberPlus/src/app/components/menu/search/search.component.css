@@ -1,0 +1,47 @@
+* {
+    border: 0;
+    background: 0;
+}
+
+.finder-container {
+    background: #333E54;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+}
+
+#finder {
+    border: none;
+    width: 90vw;
+    height: 2.5rem;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 40px;
+    background: #F2F2F2 url('../../../../assets/icons/find-icon-second-color.svg') no-repeat 78vw;
+    box-sizing: border-box;
+}
+
+.searches-container {
+    z-index: 1;
+    background-color: #E4E4E4;
+    position: absolute;
+    width: 75%;
+    border-bottom-right-radius: 10px;
+}
+
+.searches-container div {
+    height: 61px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px;
+    border-bottom: 0.25px solid rgba(0, 0, 0, 0.30);
+    border-right: 0.25px solid rgba(0, 0, 0, 0.30);
+    padding-left: 2%;
+}
+
+.searches-container div:last-child {
+    border-bottom-right-radius: 10px;
+}
