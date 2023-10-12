@@ -2,31 +2,25 @@
     font-family: Roboto Mono;
 }
 
-p {
-    color: #B6F2CB;
-    text-align: center;
-    font-size: 13px;
-}
-
-#login {
+#contact {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#logo img {
+#logo img{
     width: 100%;
 }
 
 .form-container {
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15rem;
 }
 
 .text {
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-weight: 600;
     font-size: 24px;
     text-align: center;
@@ -57,22 +51,38 @@ p {
     box-sizing: border-box;
 }
 
+#form textarea {
+    display: flex;
+    width: 290px;
+    height: 120px;
+    padding: 5px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    resize: none;
+}
+
 #submit-button {
     display: flex;
-    width: 150.341px;
-    height: 45.943px;
+    width: 90px;
+    height: 40px;
     padding: 4px 15px;
-    justify-content: center;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
     border-radius: 5px;
     border: 1px solid #2A40BF;
     background: #2A40BF;
     color: white;
-    text-align: center;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
+}
 
+.go-home {
+    margin-top: 1.5rem;
+}
+
+#go-back-icon {
+    margin-top: 0.5rem;
 }
