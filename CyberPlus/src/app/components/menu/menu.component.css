@@ -108,6 +108,13 @@
     z-index: 1;
 }
 
+.find {
+    border-radius: 30%;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
 .fixed-user {
     position: fixed;
     top: 6.7rem;
