@@ -9,13 +9,19 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './components/menu/search/search.component';
 import { UserComponent } from './components/user/user.component';
+import { HomeComponent } from './views/home/home.component';
+import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { CardComponent } from './views/home/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     SearchComponent,
-    UserComponent
+    UserComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

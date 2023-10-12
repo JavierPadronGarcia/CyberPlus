@@ -1,0 +1,28 @@
+{
+    "componentes": [
+        {
+            "id": 1,
+            "title": "western-digital-black-sn770-m2-1000-gb",
+            "price": 53.24,
+            "image": "western-digital.svg",
+            "discount": 0,
+            "prevPrice": 0
+        },
+        {
+            "id": 2,
+            "title": "María",
+            "price": 25,
+            "image":"logo.svg",
+            "discount": 0,
+            "prevPrice": 0
+        },
+        {
+            "id": 3,
+            "title": "Pedro",
+            "price": 35,
+            "image":"western-digital.svg",
+            "discount": 0,
+            "prevPrice": 0
+        }
+    ]
+}

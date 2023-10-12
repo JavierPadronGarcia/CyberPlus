@@ -1,0 +1,46 @@
+#home {
+    position: relative;
+}
+
+#home>div:last-child {
+    margin-bottom: 2rem;
+}
+
+.cards {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 70vw;
+    gap: 60px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.card1,
+.card2 {
+    display: none;
+}
+
+#best-sellers h3,
+#pc-gaming-offers h3 {
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    height: fit-content;
+}
+
+#best-sellers>div,
+#pc-gaming-offers>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

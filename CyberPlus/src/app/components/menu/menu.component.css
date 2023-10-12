@@ -8,7 +8,12 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: 3;
+    z-index: 10;
+}
+
+.menu-bar,
+.find {
+    cursor: pointer;
 }
 
 .first-line {
@@ -119,6 +124,7 @@
     position: fixed;
     top: 6.7rem;
     right: 1rem;
+    z-index: 500;
     transform: translateY(0);
     transition: transform 300ms ease-in-out;
 }

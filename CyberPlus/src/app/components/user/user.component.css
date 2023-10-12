@@ -1,7 +1,9 @@
 .user-container {
     display: flex;
+
 }
 
 .user-container img {
     border-radius: 50%;
+    cursor: pointer;
 }

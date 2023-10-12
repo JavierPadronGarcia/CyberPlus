@@ -1,0 +1,60 @@
+#card {
+    position: relative;
+    border-radius: 17px;
+    border: 0.5px solid rgba(51, 62, 84, 0.80);
+    background: #FFF;
+    width: 265px;
+    height: 350px;
+    flex-shrink: 0;
+    z-index: -1;
+    text-align: center;
+}
+
+#discount {
+    background: #F24C26;
+    color: #50F48A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 15px;
+    top: 0.6rem;
+    left: 0.6rem;
+    width: 3rem;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+#image {
+    height: 184px;
+    width: 100%;
+    background: url(../../../../assets/images/western-digital.svg) no-repeat center;
+}
+
+#text {
+    height: 4rem;
+}
+
+#price-discount {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 23%;
+}
+
+#previous-price {
+    color: #949494;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+
+#actual-price {
+    font-size: 32px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 5px;
+}
