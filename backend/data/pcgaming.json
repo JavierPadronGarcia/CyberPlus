@@ -3,10 +3,10 @@
         {
             "id": 1,
             "title": "PC Gaming Última Mega | Intel Core i5 12400F / RTX 4070 12GB / 16GB RAM / 1TB M.2",
-            "price": 53.24,
+            "price": 1615.67,
             "image": "PC-Gaming-Última-Mega.svg",
-            "discount": 0,
-            "prevPrice": 0
+            "discount": 15,
+            "prevPrice": 1835.99
         }
     ]
 }

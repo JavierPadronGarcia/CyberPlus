@@ -1,5 +1,5 @@
 <div id="card">
-    <div id="discount" *ngIf="element.discount != 0">{{element.discount}}</div>
+    <div id="discount" *ngIf="element.discount != 0">-{{element.discount}}%</div>
     <div id="image-title">
         <div id="image" [style.background-image]="'url(' + imagesURL + imageName + ')'">
         </div>

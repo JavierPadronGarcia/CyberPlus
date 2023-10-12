@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,6 +20,8 @@ export class MenuComponent {
   menuVisbility: boolean = false;
   searcherVisibility: boolean = false;
 
+  constructor(private router: Router) { }
+
   changeMenuVisibility() {
     if (this.searcherVisibility) { this.changeSearcherVisibility(); }
     this.menuVisbility = !this.menuVisbility
@@ -27,6 +30,10 @@ export class MenuComponent {
   changeSearcherVisibility() {
     if (this.menuVisbility) { this.changeMenuVisibility(); }
     this.searcherVisibility = !this.searcherVisibility
+  }
+
+  navigateToLogin(){
+    this.router.navigateByUrl('/login');
   }
 
 }

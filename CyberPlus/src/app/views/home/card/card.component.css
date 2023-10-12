@@ -3,7 +3,7 @@
     border-radius: 17px;
     border: 0.5px solid rgba(51, 62, 84, 0.80);
     background: #FFF;
-    width: 265px;
+    width: 220px;
     height: 350px;
     flex-shrink: 0;
     z-index: -1;
@@ -30,7 +30,7 @@
 #image {
     height: 184px;
     width: 100%;
-    background: url(../../../../assets/images/western-digital.svg) no-repeat center;
+    background: no-repeat center;
 }
 
 #text {
@@ -50,6 +50,8 @@
     font-size: 15px;
     font-weight: 600;
     text-decoration: line-through;
+    position: relative;
+    top: 1.2rem;
 }
 
 #actual-price {
@@ -57,4 +59,10 @@
     font-weight: 600;
     position: absolute;
     bottom: 5px;
+}
+
+@media only screen and (min-width: 380px) {
+    #card {
+        width: 265px;
+    }
 }

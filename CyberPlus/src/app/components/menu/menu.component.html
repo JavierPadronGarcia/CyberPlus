@@ -50,5 +50,5 @@
         </div>
     </div>
 
-    <app-user class="fixed-user" [ngClass]="{'move-down-active': searcherVisibility}" />
+    <app-user class="fixed-user" [ngClass]="{'move-down-active': searcherVisibility}" (click)="navigateToLogin()" />
 </header>

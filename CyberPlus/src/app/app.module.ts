@@ -12,6 +12,7 @@ import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './views/home/home.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { CardComponent } from './views/home/card/card.component';
+import { LoginComponent } from './views/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CardComponent } from './views/home/card/card.component';
     UserComponent,
     HomeComponent,
     PageNotFoundComponent,
-    CardComponent
+    CardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
