@@ -7,6 +7,14 @@
             "image": "PC-Gaming-Última-Mega.svg",
             "discount": 15,
             "prevPrice": 1835.99
+        },
+        {
+            "id": 1,
+            "title": "PC Gaming Última Zero S1 | i3 12100F / 8GB RAM / GTX 1650 4GB / 480GB",
+            "price": 608.08,
+            "image": "PC-Gaming-Última-Mega.svg",
+            "discount": 12,
+            "prevPrice": 691
         }
     ]
 }

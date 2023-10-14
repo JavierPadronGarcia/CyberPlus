@@ -7,10 +7,19 @@
     </div>
 
     <div class="form-container">
-        <form id="form">
-            <input type="email" placeholder="correo electrónico" name="email" id="email">
-            <input type="password" placeholder="contraseña" name="password" id="password">
-            <button type="submit" id="submit-button">Iniciar Sesión</button>
+        <form (ngSubmit)="submit()" id="form" #userForm="ngForm">
+            <input type="email" placeholder="correo electrónico" name="email" id="email" [(ngModel)]="user.email"
+                #name="ngModel" required>
+            <div *ngIf="name.invalid && name.dirty" class="alert">
+                <div *ngIf="name.errors?.['required']">Campo requerido</div>
+            </div>
+            <input type="password" placeholder="contraseña" name="password" id="password" [(ngModel)]="user.password"
+                #password="ngModel" minlength="4">
+            <div *ngIf="password.invalid && password.dirty" class="alert">
+                <div *ngIf="password .errors?.['required']">Campo requerido</div>
+                <div *ngIf="password .errors?.['minlength']">Mínimo 4 caracteres</div>
+            </div>
+            <button type="submit" id="submit-button" [disabled]="!userForm.form.valid">Iniciar Sesión</button>
         </form>
     </div>
 

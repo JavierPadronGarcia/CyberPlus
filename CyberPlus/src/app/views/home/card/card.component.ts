@@ -10,11 +10,16 @@ export class CardComponent implements OnInit {
 
   @Input()
   public element: Element;
+
+  @Input()
+  public logged: number;
+
   imagesURL: string = "../../../../assets/images/"
   imageName: string = ""
 
   ngOnInit(): void {
     this.imageName = this.element.image
+    console.log(this.logged)
   }
 
   constructor() {

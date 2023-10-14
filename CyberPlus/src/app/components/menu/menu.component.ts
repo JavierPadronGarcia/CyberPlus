@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-menu',
@@ -16,11 +14,13 @@ import { Router } from '@angular/router';
   ]
 })
 export class MenuComponent {
+  menuVisbility: boolean;
+  searcherVisibility: boolean;
 
-  menuVisbility: boolean = false;
-  searcherVisibility: boolean = false;
-
-  constructor(private router: Router) { }
+  constructor() {
+    this.menuVisbility = false;
+    this.searcherVisibility = false;
+  }
 
   changeMenuVisibility() {
     if (this.searcherVisibility) { this.changeSearcherVisibility(); }
@@ -31,9 +31,4 @@ export class MenuComponent {
     if (this.menuVisbility) { this.changeMenuVisibility(); }
     this.searcherVisibility = !this.searcherVisibility
   }
-
-  navigateToLogin(){
-    this.router.navigateByUrl('/login');
-  }
-
 }

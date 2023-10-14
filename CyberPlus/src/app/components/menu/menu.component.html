@@ -49,6 +49,5 @@
             <img src="../../../assets/icons/dark-mode-icon.svg" alt="modo oscuro">
         </div>
     </div>
-
-    <app-user class="fixed-user" [ngClass]="{'move-down-active': searcherVisibility}" (click)="navigateToLogin()" />
+    <app-user [seacherVisibility]="searcherVisibility" />
 </header>

@@ -119,16 +119,3 @@
     display: flex;
     justify-content: center;
 }
-
-.fixed-user {
-    position: fixed;
-    top: 6.7rem;
-    right: 1rem;
-    z-index: 500;
-    transform: translateY(0);
-    transition: transform 300ms ease-in-out;
-}
-
-.fixed-user.move-down-active {
-    transform: translateY(4rem);
-}

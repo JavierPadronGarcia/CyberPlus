@@ -9,6 +9,9 @@ import { PcgamingService } from 'src/app/shared/services/pcgaming.service';
 })
 export class HomeComponent implements OnInit {
 
+  myToken: number;
+  userEmail: string | null;
+
   public components: any = {};
   public pcgamings: any = {};
   slideIndex: any = [1, 1];
@@ -20,6 +23,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getComponents()
     this.getPcGaming()
+
+    if (localStorage.getItem('personalToken')) {
+      this.myToken = +localStorage.getItem('personalToken')!;
+    }
+    if (localStorage.getItem('userEmail')) {
+      this.userEmail = localStorage.getItem('userEmail');
+    }
   }
 
   public getComponents() {

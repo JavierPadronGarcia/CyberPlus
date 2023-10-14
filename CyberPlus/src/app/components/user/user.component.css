@@ -1,9 +1,30 @@
 .user-container {
     display: flex;
-
+    position: fixed;
+    z-index: 500;
+    top: 6.7rem;
+    left: 80%;
+    transform: translateY(0);
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
 }
 
 .user-container img {
     border-radius: 50%;
     cursor: pointer;
+}
+
+.user-container.move-down-active {
+    transform: translateY(4rem);
+    transition: transform 300ms ease-in-out;
+}
+
+.user-container.move-opened-cart {
+    left: 0;
+    transition-duration: 300ms;
+}
+
+.user-container>div {
+    display: flex;
+    flex-direction: column;
 }
