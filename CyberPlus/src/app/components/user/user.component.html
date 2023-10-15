@@ -1,8 +1,11 @@
-<div class="user-container" [ngClass]="{'move-down-active': seacherVisibility, 'move-opened-cart': cartOpened}">    
-    <img src="../../../assets/icons/user-icon.svg" *ngIf="myToken == 0" (click)="navigateToLogin()">
-    <div>
-        <img src="../../../assets/icons/logout.svg" class="logout" *ngIf="cartOpened" (click)="logout()">
-        <img src="../../../assets/icons/cart.svg" *ngIf="myToken != 0" class="cart-icon"
-            (click)="cartOpened = !cartOpened">
+<div class="user-component">
+    <div class="user-container" [ngClass]="{'move-down-active': seacherVisibility, 'move-opened-cart': cartOpened}">
+        <img src="../../../assets/icons/user-icon.svg" *ngIf="myToken == 0" (click)="navigateToLogin()">
+        <div>
+            <img src="../../../assets/icons/logout.svg" class="logout" *ngIf="cartOpened && !seacherVisibility"
+                (click)="logout()">
+            <img src="../../../assets/icons/cart.svg" *ngIf="myToken != 0" class="cart-icon" (click)="openCart()">
+        </div>
     </div>
+    <app-product class="cart-container" *ngIf="cartOpened && !seacherVisibility" [@moveLeft] />
 </div>

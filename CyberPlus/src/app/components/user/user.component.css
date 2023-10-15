@@ -3,9 +3,8 @@
     position: fixed;
     z-index: 500;
     top: 6.7rem;
-    left: 80%;
+    right: 0.5rem;
     transform: translateY(0);
-    transform: translateX(0);
     transition: transform 300ms ease-in-out;
 }
 
@@ -20,11 +19,18 @@
 }
 
 .user-container.move-opened-cart {
-    left: 0;
-    transition-duration: 300ms;
+    transform: translate(calc(-100vw + 130%));
 }
 
 .user-container>div {
     display: flex;
     flex-direction: column;
+}
+
+.cart-container {
+    z-index: 200;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    max-height: 50%;
 }

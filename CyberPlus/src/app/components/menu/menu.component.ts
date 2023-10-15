@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ComponentRef } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -16,10 +16,12 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class MenuComponent {
   menuVisbility: boolean;
   searcherVisibility: boolean;
+  cartOpened: boolean;
 
   constructor() {
     this.menuVisbility = false;
     this.searcherVisibility = false;
+    this.cartOpened = false;
   }
 
   changeMenuVisibility() {

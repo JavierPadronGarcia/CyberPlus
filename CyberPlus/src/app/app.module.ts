@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 import { CardComponent } from './views/home/card/card.component';
 import { LoginComponent } from './views/login/login.component';
 import { ContactComponent } from './views/contact/contact.component';
+import { ProductComponent } from './components/user/product/product.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ContactComponent } from './views/contact/contact.component';
     PageNotFoundComponent,
     CardComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

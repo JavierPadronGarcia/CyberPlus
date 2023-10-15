@@ -1,0 +1,33 @@
+.cart-container {
+    z-index: 200;
+    position: fixed;
+    right: 0;
+    width: 70%;
+    max-height: 50%;
+}
+
+.product {
+    height: 57px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #E4E4E4;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    border-bottom: 0.25px solid rgba(0, 0, 0, 0.20);
+    border-left: 0.25px solid rgba(0, 0, 0, 0.20);
+}
+
+.product span {
+    margin-left: 0.5rem;
+}
+
+.product img {
+    margin-right: 0.5rem;
+}
+
+.product:last-child {
+    border: 1px solid red;
+    border-bottom-left-radius: 10px;
+}
