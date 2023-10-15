@@ -1,8 +1,15 @@
-:root{
-    --background: #F2F2F2;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+    --background: #F2F2F2;
+    --background-card: #FFFFFF;
+    --background-menu: #e4e4e4;
+    --prev-price-color: #949494;
+    --discount-color: #F24C26;
+    --discount-text:#50F48A;
+    --search-background: #F2F2F2;
+    --backgound-login:#FFFFFF;
+}
 
 body {
     padding: 0;

@@ -46,7 +46,10 @@
             </div>
         </div>
         <div class="dark-mode-icon">
-            <img src="../../../assets/icons/dark-mode-icon.svg" alt="modo oscuro">
+            <img src="../../../assets/icons/dark-mode-icon.svg" alt="modo oscuro" *ngIf="!darkMode"
+                (click)="toggleDarkMode()">
+            <img src="../../../assets/icons/light-mode-icon.svg" alt="modo oscuro" *ngIf="darkMode"
+                (click)="toggleDarkMode()">
         </div>
     </div>
     <app-user [seacherVisibility]="searcherVisibility" [cartOpened]="cartOpened" [cart]="cart" />

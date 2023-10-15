@@ -2,7 +2,7 @@
     position: relative;
     border-radius: 17px;
     border: 0.5px solid rgba(51, 62, 84, 0.80);
-    background: #FFF;
+    background: var(--background-card);
     width: 220px;
     height: 350px;
     flex-shrink: 0;
@@ -11,8 +11,8 @@
 }
 
 .discount {
-    background: #F24C26;
-    color: #50F48A;
+    background: var(--discount-color);
+    color: var(--discount-text);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +53,7 @@
 }
 
 .previous-price {
-    color: #949494;
+    color: var(--prev-price-color);
     font-size: 15px;
     font-weight: 600;
     text-decoration: line-through;

@@ -64,7 +64,7 @@
 }
 
 .menu-sections {
-    background-color: #E4E4E4;
+    background-color: var(--background-menu);
     border-bottom-right-radius: 10px;
 }
 

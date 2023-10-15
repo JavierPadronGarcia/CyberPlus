@@ -14,16 +14,19 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class MenuComponent {
+  @Input()
+  cart: any;
+
   menuVisbility: boolean;
   searcherVisibility: boolean;
   cartOpened: boolean;
-  @Input()
-  cart: any;
+  darkMode: boolean;
 
   constructor() {
     this.menuVisbility = false;
     this.searcherVisibility = false;
     this.cartOpened = false;
+    this.darkMode = false;
   }
 
   changeMenuVisibility() {
@@ -34,5 +37,28 @@ export class MenuComponent {
   changeSearcherVisibility() {
     if (this.menuVisbility) { this.changeMenuVisibility(); }
     this.searcherVisibility = !this.searcherVisibility
+  }
+
+  toggleDarkMode() {
+    this.darkMode = !this.darkMode;
+    if (this.darkMode) {
+      document.documentElement.style.setProperty('--background', '#818181')
+      document.documentElement.style.setProperty('--background-card', '#BEBEBE')
+      document.documentElement.style.setProperty('--background-menu', '#BEBEBE')
+      document.documentElement.style.setProperty('--prev-price-color', '#E4E4E4')
+      document.documentElement.style.setProperty('--discount-color', '#B92F1C')
+      document.documentElement.style.setProperty('--discount-text', '#B6F2CB')
+      document.documentElement.style.setProperty('--search-background', '#A6A6A6')
+      document.documentElement.style.setProperty('--background-login', '#818181')
+    } else {
+      document.documentElement.style.setProperty('--background', '#F2F2F2')
+      document.documentElement.style.setProperty('--background-card', '#FFFFFF')
+      document.documentElement.style.setProperty('--background-menu', '#E4E4E4')
+      document.documentElement.style.setProperty('--prev-price-color', '#949494')
+      document.documentElement.style.setProperty('--discount-color', '#F24C26')
+      document.documentElement.style.setProperty('--discount-text', '#50F48A')
+      document.documentElement.style.setProperty('--search-background', '#F2F2F2')
+      document.documentElement.style.setProperty('--background-login', '##FFFFFF')
+    }
   }
 }
