@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-user',
@@ -8,9 +9,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./user.component.css'],
   animations: [
     trigger('moveLeft', [
-      state('void', style({ transform: 'translateX(100%)' })),
-      state('*', style({ transform: 'translateX(2.5%)' })),
+      state('void', style({ transform: 'translate(100%)' })),
+      state('*', style({ transform: 'translate(2.5%)' })),
       transition('void <=> *', animate('300ms ease-in-out')),
+    ]),
+    trigger('dissolve', [
+      state('void', style({ opacity: 0 })),
+      state('*', style({ opacity: 1 })),
+      transition('void <=> *', animate('400ms ease-in-out')),
     ])
   ]
 })
@@ -20,12 +26,15 @@ export class UserComponent implements OnInit {
   seacherVisibility: boolean;
   @Input()
   public cartOpened: boolean;
+  @Input()
+  cart: any;
+
   public myToken: number;
   public userEmail: string | null;
 
   @Output() cartOpenChanged = new EventEmitter<boolean>();
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private cartService: CartService) {
     this.myToken = 0;
     this.userEmail = "";
   }
@@ -50,7 +59,6 @@ export class UserComponent implements OnInit {
     this.cartOpened = !this.cartOpened;
     this.cartOpenChanged.emit(this.cartOpened);
   }
-
 
   navigateToLogin() {
     this.router.navigateByUrl('/login');

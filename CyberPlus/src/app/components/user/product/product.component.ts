@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
@@ -6,27 +6,22 @@ import { CartService } from 'src/app/shared/services/cart.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
 
+  @Input()
   cart: any;
 
-  constructor(private cartService: CartService) { }
-
-  ngOnInit(): void {
-    this.getCart()
+  constructor(private cartService: CartService) {
+    this.cart = [{}]
   }
 
-  getCart() {
-    this.cartService.getCart().subscribe(
-      (data) => {
-        this.cart = data.products;
-        console.log(this.cart)
-      },
-      (error: Error) => {
-        console.log("Error: " + error);
-      },
-      () => {
-        console.log("Petición realizada correctamente");
-      })
+  getScreenWidth() {
+    return window.innerWidth;
   }
+
+  removeFromCart(id: number) {
+    this.cartService.deleteFromCart(id);
+    this.cart = this.cartService.getCart()
+  }
+
 }

@@ -1,0 +1,44 @@
+{
+    "allProducts": [
+        {
+            "id": 1,
+            "title": "PC Gaming Última Mega | Intel Core i5 12400F / RTX 4070 12GB / 16GB RAM / 1TB M.2",
+            "price": 1615.67,
+            "image": "PC-Gaming-Última-Mega.svg",
+            "discount": 15,
+            "prevPrice": 1835.99
+        },
+        {
+            "id": 2,
+            "title": "PC Gaming Última Zero S1 | i3 12100F / 8GB RAM / GTX 1650 4GB / 480GB",
+            "price": 608.08,
+            "image": "PC-Gaming-Última-Mega.svg",
+            "discount": 12,
+            "prevPrice": 691
+        },
+        {
+            "id": 3,
+            "title": "western-digital-black-sn770-m2-1000-gb",
+            "price": 53.24,
+            "image": "western-digital.svg",
+            "discount": 0,
+            "prevPrice": 0
+        },
+        {
+            "id": 4,
+            "title": "María",
+            "price": 25,
+            "image":"logo.svg",
+            "discount": 0,
+            "prevPrice": 0
+        },
+        {
+            "id": 5,
+            "title": "Pedro",
+            "price": 35,
+            "image":"western-digital.svg",
+            "discount": 0,
+            "prevPrice": 0
+        }
+    ]
+}

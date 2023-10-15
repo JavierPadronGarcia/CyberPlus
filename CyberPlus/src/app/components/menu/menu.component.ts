@@ -1,4 +1,4 @@
-import { Component, ComponentRef } from '@angular/core';
+import { Component, ComponentRef, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -17,6 +17,8 @@ export class MenuComponent {
   menuVisbility: boolean;
   searcherVisibility: boolean;
   cartOpened: boolean;
+  @Input()
+  cart: any;
 
   constructor() {
     this.menuVisbility = false;

@@ -9,15 +9,17 @@ const server = http.createServer((req, res) => {
 
     switch (req.url) {
         case '/api/components':
-            fs.readFile('./data/components.json', (err, data) => {
-                if (err) {
-                    res.writeHead(500, { 'Content-Type': 'text/plain' });
-                    res.end('Error interno del servidor.');
-                } else {
-                    res.writeHead(200, { 'Content-Type': 'application/json' });
-                    res.end(data);
-                }
-            });
+            if (req.method == 'GET') {
+                fs.readFile('./data/components.json', (err, data) => {
+                    if (err) {
+                        res.writeHead(500, { 'Content-Type': 'text/plain' });
+                        res.end('Error interno del servidor.');
+                    } else {
+                        res.writeHead(200, { 'Content-Type': 'application/json' });
+                        res.end(data);
+                    }
+                });
+            }
             break;
 
         case '/api/pcgaming':
@@ -28,6 +30,28 @@ const server = http.createServer((req, res) => {
                     okResponse(res, data);
                 }
             });
+            break;
+
+        case '/api/allproducts':
+            fs.readFile('./data/allproducts.json', (err, data) => {
+                if (err) {
+                    showError(res);
+                } else {
+                    okResponse(res, data);
+                }
+            });
+            break;
+
+        case '/api/cart':
+            if (req.method == 'GET') {
+                fs.readFile('./data/cart.json', (err, data) => {
+                    if (err) {
+                        showError(res);
+                    } else {
+                        okResponse(res, data);
+                    }
+                });
+            }
             break;
 
         default:

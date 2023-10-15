@@ -1,4 +1,6 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Element } from 'src/app/shared/interfaces/element';
+import { CartService } from 'src/app/shared/services/cart.service';
 import { ComponentService } from 'src/app/shared/services/component.service';
 import { PcgamingService } from 'src/app/shared/services/pcgaming.service';
 
@@ -12,13 +14,15 @@ export class HomeComponent implements OnInit {
   myToken: number;
   userEmail: string | null;
 
+  cart: any;
   public components: any = {};
   public pcgamings: any = {};
   slideIndex: any = [1, 1];
   slideId: any = ["card1", "card2"]
 
   constructor(private componentService: ComponentService,
-    private pcService: PcgamingService) { }
+    private pcService: PcgamingService,
+    private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getComponents()
@@ -26,6 +30,9 @@ export class HomeComponent implements OnInit {
 
     if (localStorage.getItem('personalToken')) {
       this.myToken = +localStorage.getItem('personalToken')!;
+      if (this.myToken != undefined && this.myToken != 0) {
+        this.cart = this.cartService.getCart();
+      }
     }
     if (localStorage.getItem('userEmail')) {
       this.userEmail = localStorage.getItem('userEmail');
