@@ -22,6 +22,11 @@
     display: none;
 }
 
+.card1:first-child,
+.card2:first-child {
+    display: block;
+}
+
 #best-sellers h3,
 #pc-gaming-offers h3 {
     color: #000;

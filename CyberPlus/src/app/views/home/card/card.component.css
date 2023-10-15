@@ -1,4 +1,4 @@
-#card {
+.card {
     position: relative;
     border-radius: 17px;
     border: 0.5px solid rgba(51, 62, 84, 0.80);
@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-#discount {
+.discount {
     background: #F24C26;
     color: #50F48A;
     display: flex;
@@ -35,24 +35,24 @@
     left: 5px;
 }
 
-#image {
+.image {
     height: 170px;
     width: 100%;
     background: no-repeat center;
 }
 
-#text {
+.text {
     height: 4rem;
 }
 
-#price-discount {
+.price-discount {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 23%;
 }
 
-#previous-price {
+.previous-price {
     color: #949494;
     font-size: 15px;
     font-weight: 600;
@@ -61,17 +61,21 @@
     top: 1.2rem;
 }
 
-#actual-price {
+.actual-price {
     width: 264.117px;
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 600;
     position: absolute;
     bottom: 10px;
-    left: 16.88px;
+    left: 0;
 }
 
 @media only screen and (min-width: 380px) {
-    #card {
+    .card {
         width: 265px;
+    }
+
+    .actual-price {
+        left: 15px;
     }
 }

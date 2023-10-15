@@ -1,17 +1,17 @@
-<div id="card">
-    <div id="discount" *ngIf="element.discount != 0">-{{element.discount}}%</div>
-    <div id="image-title">
-        <div id="image" [style.background-image]="'url(' + imagesURL + imageName + ')'">
+<div class="card">
+    <div class="discount" *ngIf="element.discount != 0">-{{element.discount}}%</div>
+    <div class="image-title">
+        <div class="image" [style.background-image]="'url(' + imagesURL + imageName + ')'">
         </div>
-        <div id="text">
+        <div class="text">
             <h4> {{ element.title }} </h4>
         </div>
     </div>
-    <div id="price-discount">
-        <span id="previous-price" *ngIf="element.prevPrice != 0">{{element.prevPrice}}</span>
-        <span id="actual-price">{{ element.price }} €</span>
+    <div class="price-discount">
+        <span class="previous-price" *ngIf="element.prevPrice != 0">{{element.prevPrice}}</span>
+        <span class="actual-price">{{ element.price }} €</span>
     </div>
-    <div class="cart" *ngIf="logged != 0">
+    <div class="cart" *ngIf="logged != 0 && logged != undefined">
         <img src="../../../../assets/icons/add-to-cart.svg">
     </div>
 </div>

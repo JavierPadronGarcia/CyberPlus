@@ -28,10 +28,4 @@ export class LoginComponent {
       }
     )
   }
-
-  goHome() {
-    this.router.navigateByUrl('/').then(() => {
-      window.location.reload()
-    });
-  }
 }
