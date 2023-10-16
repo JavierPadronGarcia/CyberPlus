@@ -6,9 +6,10 @@
     --background-menu: #e4e4e4;
     --prev-price-color: #949494;
     --discount-color: #F24C26;
-    --discount-text:#50F48A;
+    --discount-text: #50F48A;
     --search-background: #F2F2F2;
-    --backgound-login:#FFFFFF;
+    --backgound-login: #FFFFFF;
+    --background-login-input: #D9D9D9;
 }
 
 body {

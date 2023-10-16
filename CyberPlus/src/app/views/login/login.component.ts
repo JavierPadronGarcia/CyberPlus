@@ -21,7 +21,7 @@ export class LoginComponent {
       (data: number) => {
         localStorage.setItem('userEmail', this.user.email);
         localStorage.setItem('personalToken', `${data}`);
-        this.router.navigate(['/home']).then(() => { window.location.reload() });
+        this.router.navigate(['/home']);
       },
       (error: Error) => {
         console.error("Error al realizar el acceso - login")

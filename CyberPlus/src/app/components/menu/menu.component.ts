@@ -50,6 +50,7 @@ export class MenuComponent {
       document.documentElement.style.setProperty('--discount-text', '#B6F2CB')
       document.documentElement.style.setProperty('--search-background', '#A6A6A6')
       document.documentElement.style.setProperty('--background-login', '#818181')
+      document.documentElement.style.setProperty('--background-login-input', '#A6A6A6')
     } else {
       document.documentElement.style.setProperty('--background', '#F2F2F2')
       document.documentElement.style.setProperty('--background-card', '#FFFFFF')
@@ -58,7 +59,8 @@ export class MenuComponent {
       document.documentElement.style.setProperty('--discount-color', '#F24C26')
       document.documentElement.style.setProperty('--discount-text', '#50F48A')
       document.documentElement.style.setProperty('--search-background', '#F2F2F2')
-      document.documentElement.style.setProperty('--background-login', '##FFFFFF')
+      document.documentElement.style.setProperty('--background-login', '#FFFFFF')
+      document.documentElement.style.setProperty('--background-login-input', '#D9D9D9')
     }
   }
 }
