@@ -39,6 +39,10 @@ export class MenuComponent {
     this.searcherVisibility = !this.searcherVisibility
   }
 
+  changeSearcher() {
+    this.searcherVisibility = !this.searcherVisibility
+  }
+
   toggleDarkMode() {
     this.darkMode = !this.darkMode;
     if (this.darkMode) {

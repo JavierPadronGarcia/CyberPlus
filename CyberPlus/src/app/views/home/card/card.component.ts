@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Element } from 'src/app/shared/interfaces/element';
 import { CartService } from 'src/app/shared/services/cart.service';
 import Swal from 'sweetalert2';
@@ -15,6 +15,8 @@ export class CardComponent implements OnInit {
 
   @Input()
   public logged: number;
+
+  @Output() product = new EventEmitter<Element>();
 
   imagesURL: string = "../../../../assets/images/";
   imageName: string = "";
@@ -42,6 +44,6 @@ export class CardComponent implements OnInit {
       showConfirmButton: false,
       timer: 500,
     })
-    this.cartService.addToCart(this.element);
+    this.product.emit(this.element);
   }
 }

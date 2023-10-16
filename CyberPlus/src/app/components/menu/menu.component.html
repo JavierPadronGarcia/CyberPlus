@@ -50,5 +50,5 @@
             <img src="../../../assets/icons/light-mode-icon.svg" alt="modo claro" *ngIf="darkMode">
         </div>
     </div>
-    <app-user [seacherVisibility]="searcherVisibility" [cartOpened]="cartOpened" [cart]="cart" />
+    <app-user [seacherVisibility]="searcherVisibility" [cartOpened]="cartOpened" (cartOpenChanged)="changeSearcher()" />
 </header>

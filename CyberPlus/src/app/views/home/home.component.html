@@ -1,11 +1,12 @@
-<app-menu [cart]="cart" />
+<app-menu />
 <div id="home">
     <div id="best-sellers">
         <h3>Los más vendidos</h3>
         <div>
             <img class="prev" src="../../../assets/icons/arrow-left.svg" (click)="plusSlides(-1,0)">
             <div class="cards">
-                <app-card class="card1" *ngFor="let component of components" [element]="component" [logged]="myToken" />
+                <app-card class="card1" *ngFor="let component of components" [element]="component" [logged]="myToken"
+                    (product)="insertProduct($event)" />
             </div>
             <img class="next" src="../../../assets/icons/arrow-rigth.svg" (click)="plusSlides(1,0)">
         </div>
@@ -16,7 +17,8 @@
         <div>
             <img class="prev" src="../../../assets/icons/arrow-left.svg" (click)="plusSlides(-1,1)">
             <div class="cards">
-                <app-card class="card2" *ngFor="let pc of pcgamings" [element]="pc" [logged]="myToken" />
+                <app-card class="card2" *ngFor="let pc of pcgamings" [element]="pc" [logged]="myToken"
+                    (product)="insertProduct($event)" />
             </div>
             <img class="next" src="../../../assets/icons/arrow-rigth.svg" (click)="plusSlides(1,1)">
         </div>

@@ -11,7 +11,7 @@
         <span class="previous-price" *ngIf="element.prevPrice != 0">{{element.prevPrice}}</span>
         <span class="actual-price">{{ element.price }} €</span>
     </div>
-    <div class="cart" *ngIf="logged != 0 && logged != undefined" (click)="addToCart()">
-        <img src="../../../../assets/icons/add-to-cart.svg">
+    <div class="cart" *ngIf="logged != 0 && logged != undefined">
+        <img src="../../../../assets/icons/add-to-cart.svg" (click)="addToCart()">
     </div>
 </div>

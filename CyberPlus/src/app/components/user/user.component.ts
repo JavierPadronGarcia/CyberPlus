@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { CartService } from 'src/app/shared/services/cart.service';
 import Swal from 'sweetalert2';
+import { Element } from 'src/app/shared/interfaces/element';
 
 @Component({
   selector: 'app-user',
@@ -23,19 +22,18 @@ import Swal from 'sweetalert2';
 })
 export class UserComponent implements OnInit {
 
-  @Input()
-  seacherVisibility: boolean;
-  @Input()
-  public cartOpened: boolean;
-  @Input()
-  cart: any;
+  @Input() public seacherVisibility: boolean;
+  @Input() public cartOpened: boolean;
 
   public myToken: number;
   public userEmail: string | null;
+  cart: Element[]
+  cartId: number
 
   @Output() cartOpenChanged = new EventEmitter<boolean>();
 
-  constructor(private router: Router, private cartService: CartService) {
+  constructor() {
+    this.cart = [];
     this.myToken = 0;
     this.userEmail = "";
   }
@@ -43,6 +41,10 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.getItem('personalToken')) {
       this.myToken = +localStorage.getItem('personalToken')!;
+
+      if (localStorage.getItem('cart')) {
+        this.getProducts();
+      }
     }
     if (localStorage.getItem('userEmail')) {
       this.userEmail = localStorage.getItem('userEmail');
@@ -82,7 +84,26 @@ export class UserComponent implements OnInit {
 
   openCart() {
     this.cartOpened = !this.cartOpened;
-    this.cartOpenChanged.emit(this.cartOpened);
+    if (this.seacherVisibility) {
+      this.cartOpenChanged.emit();
+    }
+  }
+
+  getProducts() {
+    const noObjectCart = localStorage.getItem('cart');
+    this.cart = noObjectCart ? JSON.parse(noObjectCart) : [];
   }
 
 }
+
+// let id = 1;
+// let product = localStorage.getItem(`cart${id}`);
+// let productObject: Element | null = product ? JSON.parse(product) : null;
+// this.cart.push(productObject);
+// id++;
+// while (localStorage.getItem(`cart${id}`)) {
+//   product = localStorage.getItem(`cart${id}`)
+//   productObject = product ? JSON.parse(product) : null;
+//   this.cart.push(productObject);
+//   id++;
+// }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CartService } from 'src/app/shared/services/cart.service';
 import Swal from 'sweetalert2';
 
@@ -7,13 +7,16 @@ import Swal from 'sweetalert2';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
 
-  @Input()
-  cart: any;
+  @Input() cart: any;
 
-  constructor(private cartService: CartService) {
-    this.cart = [{}]
+  @Output() cartChanged = new EventEmitter<boolean>();
+
+  constructor() { }
+
+  ngOnInit(): void {
+
   }
 
   getScreenWidth() {
@@ -34,8 +37,9 @@ export class ProductComponent {
       toast: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.cartService.deleteFromCart(id);
-        this.cart = this.cartService.getCart()
+        const localStorageCart = localStorage.getItem('cart');
+        //recibirlo, actualizarlo y finalizar eliminando uno concreto;
+        this.updateCart()
         Swal.fire({
           position: 'bottom',
           title: 'Eliminado!',
@@ -46,6 +50,10 @@ export class ProductComponent {
         })
       }
     })
+  }
+
+  updateCart() {
+    this.cartChanged.emit();
   }
 
 }

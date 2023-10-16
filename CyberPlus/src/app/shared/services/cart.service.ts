@@ -34,6 +34,7 @@ export class CartService {
   }
 
   public deleteFromCart(id: number) {
+    console.log(id)
     this.cart = this.cart.splice(id, 1);
   }
 

@@ -8,5 +8,6 @@
                 [ngClass]="{'margin-top': cartOpened}">
         </div>
     </div>
-    <app-product class="cart-container" *ngIf="cartOpened && !seacherVisibility" [@moveLeft] [cart]="cart" />
+    <app-product class="cart-container" *ngIf="cartOpened && !seacherVisibility" [@moveLeft] [cart]="cart"
+        (cartChanged)="getProducts()" />
 </div>

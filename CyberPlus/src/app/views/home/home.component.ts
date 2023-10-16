@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
 
   myToken: number;
   userEmail: string | null;
+  cart: Element[] = [];
 
-  cart: any;
   public components: any = {};
   public pcgamings: any = {};
   slideIndex: any = [1, 1];
@@ -30,13 +30,16 @@ export class HomeComponent implements OnInit {
 
     if (localStorage.getItem('personalToken')) {
       this.myToken = +localStorage.getItem('personalToken')!;
-      if (this.myToken != undefined && this.myToken != 0) {
-        this.cart = this.cartService.getCart();
-      }
     }
     if (localStorage.getItem('userEmail')) {
       this.userEmail = localStorage.getItem('userEmail');
     }
+  }
+
+  insertProduct(product: Element) {
+    this.cart.push(product);
+    const stringifiedCart = JSON.stringify(this.cart);
+    localStorage.setItem('cart', stringifiedCart);
   }
 
   public getComponents() {
