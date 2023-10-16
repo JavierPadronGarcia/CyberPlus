@@ -1,6 +1,6 @@
 <div class="user-component">
     <div class="user-container" [ngClass]="{'move-down-active': seacherVisibility, 'move-opened-cart': cartOpened}">
-        <img src="../../../assets/icons/user-icon.svg" *ngIf="myToken == 0" (click)="navigateToLogin()">
+        <img src="../../../assets/icons/user-icon.svg" *ngIf="myToken == 0" routerLink="/login">
         <div>
             <img src="../../../assets/icons/logout.svg" class="logout" *ngIf="cartOpened && !seacherVisibility"
                 (click)="logout()" [@dissolve]>

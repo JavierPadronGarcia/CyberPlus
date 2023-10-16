@@ -28,6 +28,7 @@ export class LoginComponent {
           title: 'Inicio de sesión correcto',
           showConfirmButton: false,
           timer: 1000,
+          toast: true
         })
         this.router.navigate(['/home']);
       },
@@ -39,6 +40,7 @@ export class LoginComponent {
           title: 'No se ha podido iniciar sesión',
           showConfirmButton: false,
           timer: 1000,
+          toast: true
         })
       }
     )

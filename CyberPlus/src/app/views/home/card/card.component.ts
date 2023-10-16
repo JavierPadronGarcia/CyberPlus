@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UserComponent } from 'src/app/components/user/user.component';
 import { Element } from 'src/app/shared/interfaces/element';
 import { CartService } from 'src/app/shared/services/cart.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-card',
@@ -35,6 +35,13 @@ export class CardComponent implements OnInit {
   }
 
   addToCart() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Agregado al carrito',
+      showConfirmButton: false,
+      timer: 500,
+    })
     this.cartService.addToCart(this.element);
   }
 }

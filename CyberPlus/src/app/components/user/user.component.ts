@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { CartService } from 'src/app/shared/services/cart.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user',
@@ -49,10 +50,34 @@ export class UserComponent implements OnInit {
   }
 
   public logout(): void {
-    if (localStorage.getItem('personalToken')) {
-      localStorage.removeItem('personalToken');
-    }
-    window.location.reload();
+    Swal.fire({
+      position: 'bottom',
+      icon: 'question',
+      title: 'Seguro que quieres cerrar la sesión',
+      cancelButtonText: 'No cerrar sesión',
+      confirmButtonText: 'Confirmar',
+      confirmButtonColor: '#3085d6',
+      showCancelButton: true,
+      cancelButtonColor: '#d33',
+      reverseButtons: true,
+      toast: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        if (localStorage.getItem('personalToken')) {
+          localStorage.removeItem('personalToken');
+        }
+        Swal.fire({
+          position: 'bottom',
+          title: 'Sesión cerrada',
+          icon: 'success',
+          toast: true,
+          timer: 1000,
+          showConfirmButton: false
+        }).then(() => {
+          window.location.reload();
+        })
+      }
+    })
   }
 
   openCart() {
@@ -60,7 +85,4 @@ export class UserComponent implements OnInit {
     this.cartOpenChanged.emit(this.cartOpened);
   }
 
-  navigateToLogin() {
-    this.router.navigateByUrl('/login');
-  }
 }
