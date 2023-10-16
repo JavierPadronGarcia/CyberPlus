@@ -10,10 +10,10 @@
     </div>
 
     <div class="form-container">
-        <form id="form">
-            <input type="email" placeholder="Dirección de correo electrónico" name="email" id="email">
+        <form id="form" (ngSubmit)="submit()">
+            <input type="email" placeholder="Dirección de correo electrónico" name="email" id="email" [(ngModel)]="email">
             <textarea name="description" id="description" placeholder="Escribe aquí su mensaje" cols="30"
-                rows="10"></textarea>
+                rows="10" [(ngModel)]="description"></textarea>
             <button type="submit" id="submit-button">Enviar</button>
         </form>
     </div>
