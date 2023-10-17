@@ -18,13 +18,19 @@ export class MenuComponent {
   menuVisbility: boolean;
   searcherVisibility: boolean;
   cartOpened: boolean;
-  darkMode: boolean;
+  darkMode: string | null;
 
   constructor() {
+
+    if (!localStorage.getItem('darkMode') || localStorage.getItem('darkMode') == '0') {
+      this.changeLightMode()
+    } else {
+      this.changeDarkMode();
+    }
+
     this.menuVisbility = false;
     this.searcherVisibility = false;
     this.cartOpened = false;
-    this.darkMode = false;
   }
 
   changeMenuVisibility() {
@@ -41,28 +47,33 @@ export class MenuComponent {
     this.searcherVisibility = !this.searcherVisibility
   }
 
-  toggleDarkMode() {
-    this.darkMode = !this.darkMode;
-    if (this.darkMode) {
-      document.documentElement.style.setProperty('--background', '#818181')
-      document.documentElement.style.setProperty('--background-card', '#BEBEBE')
-      document.documentElement.style.setProperty('--background-menu', '#BEBEBE')
-      document.documentElement.style.setProperty('--prev-price-color', '#E4E4E4')
-      document.documentElement.style.setProperty('--discount-color', '#B92F1C')
-      document.documentElement.style.setProperty('--discount-text', '#B6F2CB')
-      document.documentElement.style.setProperty('--search-background', '#A6A6A6')
-      document.documentElement.style.setProperty('--background-login', '#818181')
-      document.documentElement.style.setProperty('--background-login-input', '#A6A6A6')
-    } else {
-      document.documentElement.style.setProperty('--background', '#F2F2F2')
-      document.documentElement.style.setProperty('--background-card', '#FFFFFF')
-      document.documentElement.style.setProperty('--background-menu', '#E4E4E4')
-      document.documentElement.style.setProperty('--prev-price-color', '#949494')
-      document.documentElement.style.setProperty('--discount-color', '#F24C26')
-      document.documentElement.style.setProperty('--discount-text', '#50F48A')
-      document.documentElement.style.setProperty('--search-background', '#F2F2F2')
-      document.documentElement.style.setProperty('--background-login', '#FFFFFF')
-      document.documentElement.style.setProperty('--background-login-input', '#D9D9D9')
-    }
+  changeLightMode() {
+    localStorage.setItem('darkMode', '0');
+    this.darkMode = '0';
+
+    document.documentElement.style.setProperty('--background', '#F2F2F2')
+    document.documentElement.style.setProperty('--background-card', '#FFFFFF')
+    document.documentElement.style.setProperty('--background-menu', '#E4E4E4')
+    document.documentElement.style.setProperty('--prev-price-color', '#949494')
+    document.documentElement.style.setProperty('--discount-color', '#F24C26')
+    document.documentElement.style.setProperty('--discount-text', '#50F48A')
+    document.documentElement.style.setProperty('--search-background', '#F2F2F2')
+    document.documentElement.style.setProperty('--background-login', '#FFFFFF')
+    document.documentElement.style.setProperty('--background-login-input', '#D9D9D9')
+  }
+
+  changeDarkMode() {
+    localStorage.setItem('darkMode', '1');
+    this.darkMode = '1';
+
+    document.documentElement.style.setProperty('--background', '#818181')
+    document.documentElement.style.setProperty('--background-card', '#BEBEBE')
+    document.documentElement.style.setProperty('--background-menu', '#BEBEBE')
+    document.documentElement.style.setProperty('--prev-price-color', '#E4E4E4')
+    document.documentElement.style.setProperty('--discount-color', '#B92F1C')
+    document.documentElement.style.setProperty('--discount-text', '#B6F2CB')
+    document.documentElement.style.setProperty('--search-background', '#A6A6A6')
+    document.documentElement.style.setProperty('--background-login', '#818181')
+    document.documentElement.style.setProperty('--background-login-input', '#A6A6A6')
   }
 }
