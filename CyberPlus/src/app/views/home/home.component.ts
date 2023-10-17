@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Element } from 'src/app/shared/interfaces/element';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ComponentService } from 'src/app/shared/services/component.service';
@@ -14,15 +15,20 @@ export class HomeComponent implements OnInit {
   myToken: number;
   userEmail: string | null;
   cart: Element[] = [];
+  cartUpdatedSubscription: Subscription;
 
   public components: any = {};
   public pcgamings: any = {};
   slideIndex: any = [1, 1];
-  slideId: any = ["card1", "card2"]
+  slideId: any = ["card1", "card2"];
 
   constructor(private componentService: ComponentService,
     private pcService: PcgamingService,
-    private cartService: CartService) { }
+    private cartService: CartService) {
+    this.cartUpdatedSubscription = this.cartService.cartUpdated$.subscribe((cart) => {
+      this.cart = cart;
+    })
+  }
 
   ngOnInit(): void {
     this.getComponents()
@@ -40,6 +46,7 @@ export class HomeComponent implements OnInit {
     this.cart.push(product);
     const stringifiedCart = JSON.stringify(this.cart);
     localStorage.setItem('cart', stringifiedCart);
+    this.cartService.notifyProductAdded();
   }
 
   public getComponents() {

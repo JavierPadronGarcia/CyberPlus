@@ -14,8 +14,6 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class MenuComponent {
-  @Input()
-  cart: any;
 
   menuVisbility: boolean;
   searcherVisibility: boolean;

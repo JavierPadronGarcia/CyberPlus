@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import Swal from 'sweetalert2';
 import { Element } from 'src/app/shared/interfaces/element';
+import { CartService } from 'src/app/shared/services/cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user',
@@ -20,22 +22,28 @@ import { Element } from 'src/app/shared/interfaces/element';
     ])
   ]
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
 
   @Input() public seacherVisibility: boolean;
   @Input() public cartOpened: boolean;
 
   public myToken: number;
   public userEmail: string | null;
-  cart: Element[]
-  cartId: number
+  cart: Element[];
+
+  private productAddedSubscription: Subscription;
 
   @Output() cartOpenChanged = new EventEmitter<boolean>();
 
-  constructor() {
+  constructor(private cartService: CartService) {
     this.cart = [];
     this.myToken = 0;
     this.userEmail = "";
+
+    this.productAddedSubscription = this.cartService.productAdded$.subscribe(() => {
+      this.getProducts();
+    })
+
   }
 
   ngOnInit(): void {
@@ -90,20 +98,13 @@ export class UserComponent implements OnInit {
   }
 
   getProducts() {
+    this.cart = [];
     const noObjectCart = localStorage.getItem('cart');
     this.cart = noObjectCart ? JSON.parse(noObjectCart) : [];
   }
 
-}
+  ngOnDestroy(): void {
+    this.productAddedSubscription.unsubscribe();
+  }
 
-// let id = 1;
-// let product = localStorage.getItem(`cart${id}`);
-// let productObject: Element | null = product ? JSON.parse(product) : null;
-// this.cart.push(productObject);
-// id++;
-// while (localStorage.getItem(`cart${id}`)) {
-//   product = localStorage.getItem(`cart${id}`)
-//   productObject = product ? JSON.parse(product) : null;
-//   this.cart.push(productObject);
-//   id++;
-// }
+}

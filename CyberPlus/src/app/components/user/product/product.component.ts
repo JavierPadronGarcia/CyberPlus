@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Element } from 'src/app/shared/interfaces/element';
 import { CartService } from 'src/app/shared/services/cart.service';
 import Swal from 'sweetalert2';
 
@@ -9,11 +10,11 @@ import Swal from 'sweetalert2';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() cart: any;
+  @Input() cart: Element[];
 
   @Output() cartChanged = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
 
@@ -23,13 +24,13 @@ export class ProductComponent implements OnInit {
     return window.innerWidth;
   }
 
-  removeFromCart(id: number) {
+  removeFromCart(index: number) {
     Swal.fire({
       position: 'bottom',
       icon: 'question',
-      title: 'No se ha podido iniciar sesión',
+      title: 'Seguro que quiere eliminarlo del carrito?',
       cancelButtonText: 'Cancelar',
-      confirmButtonText: 'Borrar',
+      confirmButtonText: 'Eliminar',
       confirmButtonColor: '#3085d6',
       showCancelButton: true,
       cancelButtonColor: '#d33',
@@ -37,8 +38,9 @@ export class ProductComponent implements OnInit {
       toast: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        const localStorageCart = localStorage.getItem('cart');
-        //recibirlo, actualizarlo y finalizar eliminando uno concreto;
+        this.cart.splice(index, 1)
+        const stringidiedCart = JSON.stringify(this.cart);
+        localStorage.setItem('cart', stringidiedCart);
         this.updateCart()
         Swal.fire({
           position: 'bottom',
@@ -54,6 +56,7 @@ export class ProductComponent implements OnInit {
 
   updateCart() {
     this.cartChanged.emit();
+    this.cartService.notifyCartUpdated(this.cart);
   }
 
 }

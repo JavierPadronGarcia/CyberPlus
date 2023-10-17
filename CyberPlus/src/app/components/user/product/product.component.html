@@ -1,9 +1,9 @@
 <div class="cart-container">
     <div *ngIf="cart.length != 0">
-        <div class="product" *ngFor="let product of cart">
+        <div class="product" *ngFor="let product of cart; let i = index">
             <span class="title">{{product.title}}</span>
             <span>{{product.price}}€</span>
-            <img src="../../../assets/icons/trash.svg" (click)="removeFromCart(product.id)" />
+            <img src="../../../assets/icons/trash.svg" (click)="removeFromCart(i)" />
         </div>
     </div>
     <div *ngIf="cart.length == 0" class="no-products">
