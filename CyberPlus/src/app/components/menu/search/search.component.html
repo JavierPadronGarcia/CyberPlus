@@ -4,7 +4,7 @@
     </div>
 </section>
 
-<section class="searches-container" *ngIf="showDetails">
+<section class="searches-container" *ngIf="showDetails" [@moveDown]>
     <div *ngFor="let prod of filterProducts()">
         <div class="image-c">
             <img src="../../../../assets/images/{{prod.image}}">

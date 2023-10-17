@@ -1,17 +1,26 @@
 import { Component, Input } from '@angular/core';
 import { Element } from 'src/app/shared/interfaces/element';
 import { AllproductsService } from 'src/app/shared/services/allproducts.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
+  animations: [
+    trigger('moveDown', [
+      state('void', style({ transform: 'translateY(-100%)' })),
+      state('*', style({ transform: 'translateY(0)' })),
+      transition('void <=> *', animate('300ms ease-in-out')),
+    ])
+  ]
 })
-export class SearchComponent {
 
+export class SearchComponent {
   searcher: string;
   products: Element[];
   showDetails: boolean = false;
+
 
   constructor(private allproductsService: AllproductsService) {
     this.searcher = "";
