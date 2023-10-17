@@ -1,11 +1,18 @@
 <section class="finder-container">
     <div class="input-container">
-        <input type="text" placeholder="Buscar" id="finder" />
+        <input type="text" placeholder="Buscar" id="finder" [(ngModel)]="searcher" />
     </div>
 </section>
 
 <section class="searches-container">
-    <div>
+
+    <div *ngFor="let prod of filterProducts() ">
+        <img src='../../../../assets/icons/add-to-cart.svg'>
+        <span>{{prod.title}}</span>
+        <span>{{prod.price}}</span>
+    </div>
+
+    <!-- <div>
         <img src="../../../assets/icons/cpu.svg" alt="componentes">
         <span>Busqueda1</span>
         <span>precio</span>
@@ -24,5 +31,5 @@
         <img src="../../../assets/icons/monitor.svg" alt="monitores">
         <span>Busqueda4</span>
         <span>precio</span>
-    </div>
+    </div> -->
 </section>

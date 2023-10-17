@@ -41,19 +41,6 @@ const server = http.createServer((req, res) => {
                 }
             });
             break;
-
-        case '/api/cart':
-            if (req.method == 'GET') {
-                fs.readFile('./data/cart.json', (err, data) => {
-                    if (err) {
-                        showError(res);
-                    } else {
-                        okResponse(res, data);
-                    }
-                });
-            }
-            break;
-
         default:
             res.writeHead(404, { 'Content-Type': 'text/plain' });
             res.end('Ruta no encontrada');
