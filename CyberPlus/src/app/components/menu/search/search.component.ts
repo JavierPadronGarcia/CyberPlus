@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Element } from 'src/app/shared/interfaces/element';
 import { AllproductsService } from 'src/app/shared/services/allproducts.service';
 
@@ -11,6 +11,7 @@ export class SearchComponent {
 
   searcher: string;
   products: Element[];
+  showDetails: boolean = false;
 
   constructor(private allproductsService: AllproductsService) {
     this.searcher = "";
@@ -39,4 +40,9 @@ export class SearchComponent {
     })
   }
 
+  checkDetails() {
+    if (!this.showDetails) {
+      this.showDetails = true;
+    }
+  }
 }

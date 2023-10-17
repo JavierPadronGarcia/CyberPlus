@@ -1,35 +1,17 @@
 <section class="finder-container">
     <div class="input-container">
-        <input type="text" placeholder="Buscar" id="finder" [(ngModel)]="searcher" />
+        <input type="text" placeholder="Buscar" id="finder" [(ngModel)]="searcher" (click)="checkDetails()" />
     </div>
 </section>
 
-<section class="searches-container">
-
-    <div *ngFor="let prod of filterProducts() ">
-        <img src='../../../../assets/icons/add-to-cart.svg'>
-        <span>{{prod.title}}</span>
-        <span>{{prod.price}}</span>
+<section class="searches-container" *ngIf="showDetails">
+    <div *ngFor="let prod of filterProducts()">
+        <div class="image-c">
+            <img src="../../../../assets/images/{{prod.image}}">
+        </div>
+        <div class="prod-content">
+            <div class="title">{{prod.title}}</div>
+            <div class="price">{{prod.price}}€</div>
+        </div>
     </div>
-
-    <!-- <div>
-        <img src="../../../assets/icons/cpu.svg" alt="componentes">
-        <span>Busqueda1</span>
-        <span>precio</span>
-    </div>
-    <div>
-        <img src="../../../assets/icons/computer.svg" alt="ordenadores">
-        <span>Busqueda2</span>
-        <span>precio</span>
-    </div>
-    <div>
-        <img src="../../../assets/icons/peripherals.svg" alt="periféricos">
-        <span>Busqueda3</span>
-        <span>precio</span>
-    </div>
-    <div>
-        <img src="../../../assets/icons/monitor.svg" alt="monitores">
-        <span>Busqueda4</span>
-        <span>precio</span>
-    </div> -->
 </section>

@@ -2,7 +2,7 @@
     z-index: 200;
     position: fixed;
     right: 0;
-    width: 80%;
+    width: 82%;
     max-height: 50%;
 }
 
@@ -16,6 +16,8 @@
     justify-content: space-between;
     margin-left: 1rem;
     margin-right: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
     border-bottom: 0.25px solid rgba(0, 0, 0, 0.20);
     border-left: 0.25px solid rgba(0, 0, 0, 0.20);
 }
@@ -26,6 +28,7 @@
 
 .product img {
     margin-right: 0.5rem;
+    width: 2.3rem;
 }
 
 .product:last-child,
@@ -33,9 +36,12 @@
     border-bottom-left-radius: 10px;
 }
 
+.no-products span {
+    margin: 0.5rem;
+}
+
 .title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 80%;
 }
