@@ -12,7 +12,7 @@
             "id": 2,
             "title": "PC Gaming Última Zero S1 | i3 12100F / 8GB RAM / GTX 1650 4GB / 480GB",
             "price": 608.08,
-            "image": "PC-Gaming-Última-Mega.svg",
+            "image": "pc-gaming-ultima-zero-s1.jpg",
             "discount": 12,
             "prevPrice": 691
         },
@@ -26,19 +26,19 @@
         },
         {
             "id": 4,
-            "title": "María",
-            "price": 25,
-            "image":"logo.svg",
-            "discount": 0,
-            "prevPrice": 0
+            "title": "LG Gaming Ultra Gear 24\" Full HD 165Hz LCD 5ms Negro",
+            "price": 141.56,
+            "image": "lg-24gq50f-b-pantalla-para-pc-61-cm.jpg",
+            "discount": 8,
+            "prevPrice": 153.87
         },
         {
             "id": 5,
-            "title": "Pedro",
-            "price": 35,
-            "image":"western-digital.svg",
-            "discount": 0,
-            "prevPrice": 0
+            "title": "Redragon H260 RGB Blanco",
+            "price": 18.40,
+            "image": "redragon-h260-rgb-auriculares-alambrico.jpg",
+            "discount": 8,
+            "prevPrice": 20
         }
     ]
 }

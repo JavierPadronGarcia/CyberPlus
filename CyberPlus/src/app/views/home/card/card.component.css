@@ -34,9 +34,13 @@
 }
 
 .image {
-    height: 170px;
-    width: 100%;
-    background: no-repeat center;
+    height: 10.6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.image img {
+    height: 100%;
 }
 
 .text {
@@ -56,7 +60,7 @@
     font-weight: 600;
     text-decoration: line-through;
     position: relative;
-    top: 1.2rem;
+    top: 2rem;
 }
 
 .actual-price {

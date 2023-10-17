@@ -46,14 +46,18 @@
     border-bottom-right-radius: 10px;
 }
 
-.image-c,
-.image-c>img {
-    width: 3rem;
-}
-
 .image-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
     position: absolute;
     left: 0.3rem;
+}
+
+.image-c img {
+    height: 50%;
+    width: 100%;
 }
 
 .prod-content {
@@ -61,7 +65,7 @@
     right: 0;
     display: flex;
     justify-content: space-between;
-    width: 75%;
+    width: 70%;
     height: 15%;
     font-size: 0.8rem;
     margin-right: 0.5rem;

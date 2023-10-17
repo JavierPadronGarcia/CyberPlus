@@ -10,19 +10,19 @@
         },
         {
             "id": 2,
-            "title": "María",
-            "price": 25,
-            "image":"logo.svg",
-            "discount": 0,
-            "prevPrice": 0
+            "title": "LG Gaming Ultra Gear 24\" Full HD 165Hz LCD 5ms Negro",
+            "price": 141.56,
+            "image": "lg-24gq50f-b-pantalla-para-pc-61-cm.jpg",
+            "discount": 8,
+            "prevPrice": 153.87
         },
         {
             "id": 3,
-            "title": "Pedro",
-            "price": 35,
-            "image":"western-digital.svg",
-            "discount": 0,
-            "prevPrice": 0
+            "title": "Redragon H260 RGB Blanco",
+            "price": 18.40,
+            "image": "redragon-h260-rgb-auriculares-alambrico.jpg",
+            "discount": 8,
+            "prevPrice": 20
         }
     ]
 }

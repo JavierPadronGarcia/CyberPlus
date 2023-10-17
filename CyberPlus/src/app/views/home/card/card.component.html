@@ -1,7 +1,8 @@
 <div class="card">
     <div class="discount" *ngIf="element.discount != 0">-{{element.discount}}%</div>
     <div class="image-title">
-        <div class="image" [style.background-image]="'url(' + imagesURL + imageName + ')'">
+        <div class="image">
+            <img src="../../../../assets/images/{{element.image}}">
         </div>
         <div class="text">
             <h4> {{ element.title }} </h4>
