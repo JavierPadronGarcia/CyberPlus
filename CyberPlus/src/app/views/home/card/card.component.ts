@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Element } from 'src/app/shared/interfaces/element';
-import { CartService } from 'src/app/shared/services/cart.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -25,7 +24,7 @@ export class CardComponent implements OnInit {
     this.imageName = this.element.image
   }
 
-  constructor(private cartService: CartService) {
+  constructor() {
     this.element = {
       id: 0,
       title: "",

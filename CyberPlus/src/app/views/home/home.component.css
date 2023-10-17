@@ -6,6 +6,10 @@
     margin-bottom: 2rem;
 }
 
+#best-sellers {
+    padding-top: 5rem;
+}
+
 .cards {
     box-sizing: border-box;
     display: flex;

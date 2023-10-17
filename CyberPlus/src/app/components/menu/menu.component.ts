@@ -6,9 +6,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
   animations: [
-    trigger('moveDown', [
+    trigger('moveDownM', [
       state('void', style({ transform: 'translateY(-100%)' })),
-      state('*', style({ transform: 'translateY(0)' })),
+      state('*', style({ transform: 'translateY(39%)' })),
+      transition('void <=> *', animate('300ms ease-in-out')),
+    ]),
+    trigger('moveDownS', [
+      state('void', style({ transform: 'translateY(-100%)' })),
+      state('*', style({ transform: 'translateY(166%)' })),
       transition('void <=> *', animate('300ms ease-in-out')),
     ])
   ]

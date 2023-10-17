@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Element } from 'src/app/shared/interfaces/element';
-import { CartService } from 'src/app/shared/services/cart.service';
+import { NotifiactionsService } from 'src/app/shared/services/notifications.service';
 import { ComponentService } from 'src/app/shared/services/component.service';
 import { PcgamingService } from 'src/app/shared/services/pcgaming.service';
 
@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private componentService: ComponentService,
     private pcService: PcgamingService,
-    private cartService: CartService) {
-    this.cartUpdatedSubscription = this.cartService.cartUpdated$.subscribe((cart) => {
+    private notificationService: NotifiactionsService) {
+    this.cartUpdatedSubscription = this.notificationService.cartUpdated$.subscribe((cart) => {
       this.cart = cart;
     })
   }
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     this.cart.push(product);
     const stringifiedCart = JSON.stringify(this.cart);
     localStorage.setItem('cart', stringifiedCart);
-    this.cartService.notifyProductAdded();
+    this.notificationService.notifyProductAdded();
   }
 
   public getComponents() {

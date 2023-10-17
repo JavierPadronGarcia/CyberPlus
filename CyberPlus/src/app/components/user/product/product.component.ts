@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Element } from 'src/app/shared/interfaces/element';
-import { CartService } from 'src/app/shared/services/cart.service';
+import { NotifiactionsService } from 'src/app/shared/services/notifications.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,17 +8,13 @@ import Swal from 'sweetalert2';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
 
   @Input() cart: Element[];
 
   @Output() cartChanged = new EventEmitter<boolean>();
 
-  constructor(private cartService: CartService) { }
-
-  ngOnInit(): void {
-
-  }
+  constructor(private notifiactionsService: NotifiactionsService) { }
 
   getScreenWidth() {
     return window.innerWidth;
@@ -56,7 +52,7 @@ export class ProductComponent implements OnInit {
 
   updateCart() {
     this.cartChanged.emit();
-    this.cartService.notifyCartUpdated(this.cart);
+    this.notifiactionsService.notifyCartUpdated(this.cart);
   }
 
 }

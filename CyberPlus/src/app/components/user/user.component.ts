@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import Swal from 'sweetalert2';
 import { Element } from 'src/app/shared/interfaces/element';
-import { CartService } from 'src/app/shared/services/cart.service';
+import { NotifiactionsService } from 'src/app/shared/services/notifications.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -35,12 +35,12 @@ export class UserComponent implements OnInit, OnDestroy {
 
   @Output() cartOpenChanged = new EventEmitter<boolean>();
 
-  constructor(private cartService: CartService) {
+  constructor(private NotifiactionsService: NotifiactionsService) {
     this.cart = [];
     this.myToken = 0;
     this.userEmail = "";
 
-    this.productAddedSubscription = this.cartService.productAdded$.subscribe(() => {
+    this.productAddedSubscription = this.NotifiactionsService.productAdded$.subscribe(() => {
       this.getProducts();
     })
 
@@ -70,12 +70,11 @@ export class UserComponent implements OnInit, OnDestroy {
       showCancelButton: true,
       cancelButtonColor: '#d33',
       reverseButtons: true,
-      toast: true,
+      toast: true
+
     }).then((result) => {
       if (result.isConfirmed) {
-        if (localStorage.getItem('personalToken')) {
-          localStorage.removeItem('personalToken');
-        }
+        localStorage.removeItem('personalToken');
         Swal.fire({
           position: 'bottom',
           title: 'Sesión cerrada',
