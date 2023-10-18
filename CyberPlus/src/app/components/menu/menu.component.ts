@@ -1,4 +1,4 @@
-import { Component, ComponentRef, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -38,21 +38,25 @@ export class MenuComponent {
     this.cartOpened = false;
   }
 
-  changeMenuVisibility() {
+  changeMenuVisibility(): void {
     if (this.searcherVisibility) { this.changeSearcherVisibility(); }
     this.menuVisbility = !this.menuVisbility
   }
 
-  changeSearcherVisibility() {
+  changeSearcherVisibility(): void {
     if (this.menuVisbility) { this.changeMenuVisibility(); }
     this.searcherVisibility = !this.searcherVisibility
   }
 
-  changeSearcher() {
+  changeSearcherNotification(): void {
     this.searcherVisibility = !this.searcherVisibility
   }
 
-  changeLightMode() {
+  changeMenuNotification(): void {
+    this.menuVisbility = !this.menuVisbility;
+  }
+
+  changeLightMode(): void {
     localStorage.setItem('darkMode', '0');
     this.darkMode = '0';
 
@@ -67,7 +71,7 @@ export class MenuComponent {
     document.documentElement.style.setProperty('--background-login-input', '#D9D9D9')
   }
 
-  changeDarkMode() {
+  changeDarkMode(): void {
     localStorage.setItem('darkMode', '1');
     this.darkMode = '1';
 

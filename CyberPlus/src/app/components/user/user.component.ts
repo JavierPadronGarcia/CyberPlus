@@ -22,28 +22,27 @@ import { Subscription } from 'rxjs';
     ])
   ]
 })
-export class UserComponent implements OnInit, OnDestroy {
+export class UserComponent implements OnInit {
 
   @Input() public seacherVisibility: boolean;
+  @Input() public menuVisibility: boolean;
   @Input() public cartOpened: boolean;
 
   public myToken: number;
   public userEmail: string | null;
   cart: Element[];
 
-  private productAddedSubscription: Subscription;
-
-  @Output() cartOpenChanged = new EventEmitter<boolean>();
+  @Output() cartOpenChangedSeacher = new EventEmitter<boolean>();
+  @Output() cartOpenChangedMenu = new EventEmitter<boolean>();
 
   constructor(private NotifiactionsService: NotifiactionsService) {
     this.cart = [];
     this.myToken = 0;
     this.userEmail = "";
 
-    this.productAddedSubscription = this.NotifiactionsService.productAdded$.subscribe(() => {
+    this.NotifiactionsService.productAdded$.subscribe(() => {
       this.getProducts();
     })
-
   }
 
   ngOnInit(): void {
@@ -89,10 +88,14 @@ export class UserComponent implements OnInit, OnDestroy {
     })
   }
 
-  openCart() {
+  toggleCart() {
     this.cartOpened = !this.cartOpened;
     if (this.seacherVisibility) {
-      this.cartOpenChanged.emit();
+      this.cartOpenChangedSeacher.emit();
+    }
+
+    if (this.menuVisibility) {
+      this.cartOpenChangedMenu.emit();
     }
   }
 
@@ -101,9 +104,4 @@ export class UserComponent implements OnInit, OnDestroy {
     const noObjectCart = localStorage.getItem('cart');
     this.cart = noObjectCart ? JSON.parse(noObjectCart) : [];
   }
-
-  ngOnDestroy(): void {
-    this.productAddedSubscription.unsubscribe();
-  }
-
 }

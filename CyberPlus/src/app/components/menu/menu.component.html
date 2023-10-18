@@ -53,5 +53,11 @@
                 *ngIf="darkMode == '1'">
         </div>
     </div>
-    <app-user [seacherVisibility]="searcherVisibility" [cartOpened]="cartOpened" (cartOpenChanged)="changeSearcher()" />
+    <app-user 
+        [seacherVisibility]="searcherVisibility" 
+        [cartOpened]="cartOpened" 
+        [menuVisibility]="menuVisbility"
+        (cartOpenChangedSeacher)="changeSearcherNotification()" 
+        (cartOpenChangedMenu)="changeMenuNotification()" 
+    />
 </header>

@@ -3,11 +3,11 @@
         <img src="../../../assets/icons/user-icon.svg" alt="usuario" *ngIf="myToken == 0" routerLink="/login">
         <div>
             <img src="../../../assets/icons/logout.svg" alt="cerrar sesión" class="logout"
-                *ngIf="cartOpened && !seacherVisibility" (click)="logout()" [@dissolve]>
+                *ngIf="cartOpened && !seacherVisibility && !menuVisibility" (click)="logout()" [@dissolve]>
             <img src="../../../assets/icons/cart.svg" alt="carrito" *ngIf="myToken != 0" class="cart-icon"
-                (click)="openCart()" [ngClass]="{'margin-top': cartOpened}">
+                (click)="toggleCart()" [ngClass]="{'margin-top': cartOpened}">
         </div>
     </div>
-    <app-product class="cart-container" *ngIf="cartOpened && !seacherVisibility" [@moveLeft] [cart]="cart"
-        (cartChanged)="getProducts()" />
+    <app-product class="cart-container" *ngIf="cartOpened && !seacherVisibility && !menuVisibility" [@moveLeft]
+        [cart]="cart" (cartChanged)="getProducts()" />
 </div>
