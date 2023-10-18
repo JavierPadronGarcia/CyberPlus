@@ -1,27 +1,107 @@
 # CyberPlus
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+<a name="readme-top"></a>
 
-## Development server
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<img src="./CyberPlus/src/assets/images/logo.webp">
 
-## Code scaffolding
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Cyberplus is a project developed in Angular for the frontend and Node.js for the backend. It is about a mobile application for selling computer products, where all the information is stored in the backend, and the frontend receives the data for display, except for the images, which are located in the 'assets' folder within the Angular project. Additionally, the design was created using Figma. 
 
-## Build
+[Click here to view the prototype.](https://www.figma.com/proto/WP78JZwg84C3zBLH7EGOpi/Cyber-%2B?page-id=0%3A1&node-id=5-18&starting-point-node-id=5%3A18&mode=design&t=F31ftSapEwh9mAkd-1) The prototype don't have all the features.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Built With
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* [![Angular][Angular]][Angular-url]
 
-## Running end-to-end tests
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<!-- GETTING STARTED -->
+## Getting Started
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Prerequisites
+
+- Have a text editor like [Visual Studio Code]
+
+
+- Have installed the lastest lts version of node js
+
+you can see what version is installed with:
+
+ ```sh
+  node --version
+  ```
+
+If you don't have node js <a href='https://nodejs.org/en'>click here</a> to install it
+
+### Installation
+
+1. Clone the repo
+```sh
+   git clone https://github.com/JavierPadronGarcia/CyberPlus.git
+```
+
+2. go to the project folder and go to the both folders, CyberPlus and backend and Install NPM packages
+
+```sh
+    cd CyberPlus
+   npm install
+```
+```sh
+   cd ..
+   cd backend
+   npm install
+```
+
+3. Now, start the proyect, first the backend and after the frontend, each one in a new terminal:
+
+```sh
+   cd backend
+   node server.js
+```
+
+```sh
+   cd Cyberplus
+   ng serve
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+
+Javier Padrón García -- padrongarciajavier04@gmail.com
+
+Project Link: [https://github.com/JavierPadronGarcia/CyberPlus.git](https://github.com/JavierPadronGarcia/CyberPlus.git)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- URL for images and links -->
+[Angular]: https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io
+
+[Visual Studio Code]: https://code.visualstudio.com
