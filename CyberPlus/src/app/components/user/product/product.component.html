@@ -1,12 +1,12 @@
-<div class="cart-container">
+<section class="cart-container">
     <div *ngIf="cart.length != 0">
         <div class="product" *ngFor="let product of cart; let i = index">
             <span class="title">{{product.title}}</span>
             <span>{{product.price}}€</span>
-            <img src="../../../assets/icons/trash.svg" (click)="removeFromCart(i)" />
+            <img src="../../../assets/icons/trash.svg" alt="eliminar del carrito" (click)="removeFromCart(i)" />
         </div>
     </div>
     <div *ngIf="cart.length == 0" class="no-products">
         <span>No hay productos en el carrito, agrega productos para verlos aquí</span>
     </div>
-</div>
+</section>

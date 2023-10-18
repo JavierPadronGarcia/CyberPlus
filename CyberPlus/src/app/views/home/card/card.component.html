@@ -1,8 +1,8 @@
-<div class="card">
+<article class="card">
     <div class="discount" *ngIf="element.discount != 0">-{{element.discount}}%</div>
     <div class="image-title">
         <div class="image">
-            <img src="../../../../assets/images/{{element.image}}">
+            <img src="../../../../assets/images/{{element.image}}" alt="producto: {{element.title}}">
         </div>
         <div class="text">
             <h4> {{ element.title }} </h4>
@@ -13,6 +13,6 @@
         <span class="actual-price">{{ element.price }} €</span>
     </div>
     <div class="cart" *ngIf="logged != 0 && logged != undefined">
-        <img src="../../../../assets/icons/add-to-cart.svg" (click)="addToCart()">
+        <img src="../../../../assets/icons/add-to-cart.svg" alt="agregar al carrito" (click)="addToCart()">
     </div>
-</div>
+</article>

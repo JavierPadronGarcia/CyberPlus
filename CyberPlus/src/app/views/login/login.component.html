@@ -1,33 +1,34 @@
-<div id="login">
+<article id="login">
     <div id="logo">
-        <img src="../../../assets/images/logo.png" width="100%">
+        <img src="../../../assets/images/logo.png" alt="logo" width="100%">
     </div>
     <div class="text">
         <span>Accede a tu cuenta</span>
     </div>
 
-    <div class="form-container">
+    <section class="form-container">
         <form (ngSubmit)="submit()" id="form" #userForm="ngForm">
             <input type="email" placeholder="correo electrónico" name="email" id="email" [(ngModel)]="user.email"
-                #name="ngModel" required>
+                #name="ngModel" required pattern="[a-zA-Z]+[@][a-zA-Z.]+">
             <div *ngIf="name.invalid && name.dirty" class="alert">
                 <div *ngIf="name.errors?.['required']">Campo requerido</div>
+                <div *ngIf="name.errors?.['pattern']">Para que sea un correo electrónico debe tener un @</div>
             </div>
             <input type="password" placeholder="contraseña" name="password" id="password" [(ngModel)]="user.password"
-                #password="ngModel" minlength="4">
+                #password="ngModel" minlength="4" required>
             <div *ngIf="password.invalid && password.dirty" class="alert">
                 <div *ngIf="password .errors?.['required']">Campo requerido</div>
                 <div *ngIf="password .errors?.['minlength']">Mínimo 4 caracteres</div>
             </div>
             <button type="submit" id="submit-button" [disabled]="!userForm.form.valid">Iniciar Sesión</button>
         </form>
-    </div>
+    </section>
 
     <p>¿No tienes cuenta? ¡Registrate!</p>
 
     <p routerLink="/contact">Tienes Alguna duda? Contáctanos!</p>
 
     <div>
-        <img src="../../../assets/icons/home.svg" routerLink="/home">
+        <img src="../../../assets/icons/home.svg" alt="volver al inicio" routerLink="/home">
     </div>
-</div>
+</article>

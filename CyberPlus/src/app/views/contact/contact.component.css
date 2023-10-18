@@ -83,3 +83,10 @@
 #go-back-icon {
     margin-top: 0.5rem;
 }
+
+.alert {
+    display: flex;
+    justify-content: center;
+    width: 260px;
+    text-align: center;
+}

@@ -2,23 +2,24 @@
     <div class="main-container">
         <div class="first-line">
             <div class="menu-bar">
-                <img src="../../../assets/icons/menu-bar.svg" (click)="changeMenuVisibility()" *ngIf="!menuVisbility" />
-                <img src="../../../assets/icons/menu-close.svg" (click)="changeMenuVisibility()"
+                <img src="../../../assets/icons/menu-bar.svg" alt="abrir menu" (click)="changeMenuVisibility()"
+                    *ngIf="!menuVisbility" />
+                <img src="../../../assets/icons/menu-close.svg" alt="cerrar menu" (click)="changeMenuVisibility()"
                     *ngIf="menuVisbility" />
             </div>
-            <div class="logo"><img src="../../../assets/images/logo.svg"></div>
+            <div class="logo"><img src="../../../assets/images/logo.svg" alt="logo CyberPlus"></div>
             <div class="find" (click)="changeSearcherVisibility()">
-                <img src="../../../assets/icons/find-icon-opened.svg" *ngIf="searcherVisibility">
-                <img src="../../../assets/icons/find-icon.svg" *ngIf="!searcherVisibility">
+                <img src="../../../assets/icons/find-icon-opened.svg" alt="cerrar buscador" *ngIf="searcherVisibility">
+                <img src="../../../assets/icons/find-icon.svg" alt="abrir buscador" *ngIf="!searcherVisibility">
             </div>
         </div>
         <div class="second-line">
             <div>
-                <img src="../../../assets/icons/offer.svg">
+                <img src="../../../assets/icons/offer.svg" alt="Ofertas">
                 <span>Ofertas</span>
             </div>
             <div>
-                <img src="../../../assets/icons/news-icon.svg">
+                <img src="../../../assets/icons/news-icon.svg" alt="Novedades">
                 <span>Novedades</span>
             </div>
         </div>

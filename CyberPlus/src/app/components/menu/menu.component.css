@@ -110,7 +110,7 @@
 }
 
 .finder {
-    width: 100%;
+    width: 101%;
     position: fixed;
     z-index: 998;
 }

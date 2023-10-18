@@ -1,24 +1,32 @@
-<div id="contact">
+<body id="contact">
     <div id="go-back-icon">
-        <img src="../../../assets/icons/arrow-up.svg" routerLink="/login">
+        <img src="../../../assets/icons/arrow-up.svg" alt="retroceder al login" routerLink="/login">
     </div>
     <div id="logo">
-        <img src="../../../assets/images/logo.png" width="100%">
+        <img src="../../../assets/images/logo.png" alt="logo" width="100%">
     </div>
     <div class="text">
         <span>Contáctanos</span>
     </div>
 
-    <div class="form-container">
-        <form id="form" (ngSubmit)="submit()">
-            <input type="email" placeholder="Dirección de correo electrónico" name="email" id="email" [(ngModel)]="email">
-            <textarea name="description" id="description" placeholder="Escribe aquí su mensaje" cols="30"
-                rows="10" [(ngModel)]="description"></textarea>
-            <button type="submit" id="submit-button">Enviar</button>
+    <section class="form-container">
+        <form id="form" (ngSubmit)="submit()" #contactForm="ngForm">
+            <input type="email" placeholder="Dirección de correo electrónico" name="email" id="email" #name="ngModel"
+                [(ngModel)]="email" required pattern="[a-zA-Z]+[@][a-zA-Z.]+">
+            <div *ngIf="name.invalid && name.dirty" class="alert">
+                <div *ngIf="name.errors?.['required']">Campo requerido</div>
+                <div *ngIf="name.errors?.['pattern']">Para que sea un correo electrónico debe tener un @</div>
+            </div>
+            <textarea name="description" id="description" placeholder="Escribe aquí su mensaje" cols="30" rows="10"
+                #text="ngModel" [(ngModel)]="description" required></textarea>
+            <div *ngIf="text.invalid && text.dirty" class="alert">
+                <div *ngIf="text .errors?.['required']">Campo requerido</div>
+            </div>
+            <button type="submit" id="submit-button" [disabled]="!contactForm.form.valid">Enviar</button>
         </form>
-    </div>
+    </section>
 
     <div class="go-home">
-        <img src="../../../assets/icons/home.svg" (click)="goHome()">
+        <img src="../../../assets/icons/home.svg" alt="volver al inicio" (click)="goHome()">
     </div>
-</div>
+</body>
