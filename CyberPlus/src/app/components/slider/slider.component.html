@@ -1,0 +1,8 @@
+<div class="slider">
+    <img class="prev" src="../../../assets/icons/arrow-left.svg" alt="retroceder" (click)="plusSlides(-1)">
+    <div class="cards">
+        <app-card class="card-component{{sliderIndex}}" *ngFor="let element of elements" [element]="element"
+            [logged]="logged" (product)="notifyInsert($event)" />
+    </div>
+    <img class="next" src="../../../assets/icons/arrow-rigth.svg" alt="siguiente" (click)="plusSlides(1)">
+</div>

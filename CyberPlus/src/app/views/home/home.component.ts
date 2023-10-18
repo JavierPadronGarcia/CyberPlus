@@ -19,8 +19,7 @@ export class HomeComponent implements OnInit {
 
   public components: any = {};
   public pcgamings: any = {};
-  slideIndex: any = [1, 1];
-  slideId: any = ["card1", "card2"];
+
 
   constructor(private componentService: ComponentService,
     private pcService: PcgamingService,
@@ -59,9 +58,9 @@ export class HomeComponent implements OnInit {
       },
       () => {
         console.log("Petición realizada correctamente");
+
         window.onload = () => {
-          this.showSlides(1, 0);
-          this.showSlides(1, 1);
+          this.notificationService.notifyChargeSlides();
         }
       }
     )
@@ -79,23 +78,5 @@ export class HomeComponent implements OnInit {
         console.log("Petición realizada correctamente");
       }
     )
-  }
-
-  plusSlides(n: number, no: number) {
-    this.showSlides(this.slideIndex[no] += n, no);
-  }
-
-  showSlides(n: number, no: number) {
-    let slides = document.getElementsByClassName(this.slideId[no]) as HTMLCollectionOf<HTMLElement>;
-    let i;
-
-    if (n > slides.length) { this.slideIndex[no] = 1; }
-    if (n < 1) { this.slideIndex[no] = slides.length; }
-
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-
-    slides[this.slideIndex[no] - 1].style.display = "block";
   }
 }

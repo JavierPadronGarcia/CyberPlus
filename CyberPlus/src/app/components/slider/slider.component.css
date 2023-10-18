@@ -1,0 +1,32 @@
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cards {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 70vw;
+    gap: 60px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.card-component1,
+.card-component2 {
+    display: none;
+}
+
+.card-component1:first-child,
+.card-component2:first-child {
+    display: block;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    height: fit-content;
+}

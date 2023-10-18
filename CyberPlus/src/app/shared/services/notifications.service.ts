@@ -15,9 +15,12 @@ export class NotifiactionsService {
 
   private searcherOpened = new Subject<void>();
 
+  private chargeSlides = new Subject<void>();
+
   productAdded$ = this.productAdded.asObservable();
   cartUpdated$ = this.cartUpdated.asObservable();
   searcherOpened$ = this.searcherOpened.asObservable();
+  chargeSlides$ = this.chargeSlides.asObservable();
 
   notifyProductAdded() {
     this.productAdded.next();
@@ -29,6 +32,10 @@ export class NotifiactionsService {
 
   notifySearcherOpened() {
     this.searcherOpened.next();
+  }
+
+  notifyChargeSlides() {
+    this.chargeSlides.next();
   }
 
 }

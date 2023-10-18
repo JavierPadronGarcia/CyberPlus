@@ -3,25 +3,13 @@
 <body id="home">
     <section id="best-sellers">
         <h3>Los más vendidos</h3>
-        <div>
-            <img class="prev" src="../../../assets/icons/arrow-left.svg" alt="retroceder" (click)="plusSlides(-1,0)">
-            <div class="cards">
-                <app-card class="card1" *ngFor="let component of components" [element]="component" [logged]="myToken"
-                    (product)="insertProduct($event)" />
-            </div>
-            <img class="next" src="../../../assets/icons/arrow-rigth.svg" alt="siguiente" (click)="plusSlides(1,0)">
-        </div>
+        <app-slider [elements]="components" [sliderIndex]="1" [logged]="myToken"
+            (product)="insertProduct($event)"></app-slider>
     </section>
 
     <section id="pc-gaming-offers">
         <h3>PC Gaming en oferta</h3>
-        <div>
-            <img class="prev" src="../../../assets/icons/arrow-left.svg" alt="siguiente" (click)="plusSlides(-1,1)">
-            <div class="cards">
-                <app-card class="card2" *ngFor="let pc of pcgamings" [element]="pc" [logged]="myToken"
-                    (product)="insertProduct($event)" />
-            </div>
-            <img class="next" src="../../../assets/icons/arrow-rigth.svg" alt="retroceder" (click)="plusSlides(1,1)">
-        </div>
+        <app-slider [elements]="pcgamings" [sliderIndex]="2" [logged]="myToken"
+            (product)="insertProduct($event)"></app-slider>
     </section>
 </body>
